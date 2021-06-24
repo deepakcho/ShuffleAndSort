@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  background: #efefef;
+  font-size: 62.5%;
+}
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  padding: 10px;
+}
+.container {
+  display: flex;
+  max-width: 960px;
+  height: 100%;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.container .control {
+  width: 20%;
+  height: 100%;
+  padding: 0 20px 0;
+}
+
+.control .button {
+  font-size: 1.2rem;
+  border: 0;
+  padding: 16px 10px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  background: #71c3dc;
+  box-shadow: 0px 4px #2b8ead;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.control .button:hover {
+  background: #6f98a8;
+  box-shadow: 0px 4px #2b8ead;
+}
+
+.control .button:active {
+  background: #6f98a8;
+  box-shadow: 0px 0px #2b8ead;
+}
+
+.container .gridContainer {
+  width: 80%;
+  height: 100%;
+}
+
+.gridContainer {
+  display: grid;
+  align-items: stretch;
+  justify-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gridContainer .cell {
+  text-align: center;
+  vertical-align: center;
+  align-self: stretch;
+  font-size: 7rem;
+  color: #fff;
+  position: relative;
+}
+
+.cell .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.cell .text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(35%);
+  text-shadow: 1px 1px #000;
+}
+.footer h4 {
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+  color: #aba9a9;
+  padding: 10px;
+}
+
+@media screen and (max-width: 375px) {
+  body,
+  html {
+    font-size: 42.5%;
+    background: #fff;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 2rem;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .footer h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #333;
+  }
+
+  .container .control {
+    width: 100%;
+    padding: 0 5% 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 10px;
+  }
+  .control .button {
+    width: 30%;
+    margin: 0 5px 5px 5px;
+    font-size: 1.8rem;
+  }
+  .container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  .container .gridContainer {
+    width: 100%;
+    grid-template-columns: auto;
+    grid-row-gap: 3px;
+  }
+
+  .gridContainer .cell {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #efefef;
+  }
+  .cell .text {
+    text-shadow: none;
+    color: #333;
+  }
+  .cell .bg {
+    width: 10px;
+    position: unset;
+  }
+  .cell .text {
+    width: calc(100% - 10px);
+    position: unset;
+    transform: unset;
+  }
+}
